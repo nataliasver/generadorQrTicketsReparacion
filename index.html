@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>QR Generator by Soporte Master</title>
+
+  <script type="text/javascript" src="./qr-code-styling.js"></script> 
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  
+  <header id="header"><h1>Generador de Qr para Equipos en reparación</h1></header>
+
+  <section id="content">
+
+    <div>
+
+      <form id="qrForm" onsubmit="return false;">
+
+        <div class="inputContainer">
+
+          <label for="oficina">Sector o Número de Oficina</label>
+
+          <input type="text" onchange="updateQrData();"  name="oficina" id="oficina" placeholder="Recursos Humanos" required />
+		  
+		  <label for="incidenteMesa">Número de ticket Mesa de Ayuda</label>
+
+          <input type="text" onchange="updateQrData();" name="ticketmesa" id="ticketMesa" placeholder="123654" required />
+		  		  	  
+		  <label for="incidenteTaller">Número de ticket Laboratorio</label>
+
+          <input type="text" onchange="updateQrData();" name="ticketlaboratorio" id="ticketLaboratorio" placeholder="147896" required />
+
+        </div>
+		<div>
+			<button id="formButton" style = 'width:49%'onclick="download();">Download</button>
+			<button id="formButton" style = 'width:49%' onclick="printImage();">Imprimir</button>
+		</div>
+		<div>
+			<button id="formButton" style = 'width:100%' onclick="limpiardatos();">Limpiar datos</button>
+		</div>
+	  </form>
+		
+    </div>
+
+    <div id="canvas"></div>
+	
+  </section>
+
+ 
+ <script type="text/javascript" src="qr.js"></script>
+		 
+</body>
+
+</html>
